@@ -82,10 +82,53 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         }
     }
     
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        var businessAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "BusinessAnnotationView") as? MKMarkerAnnotationView
+        
+        if businessAnnotationView == nil {
+            
+            businessAnnotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "BusinessAnnotationView")
+            businessAnnotationView?.canShowCallout = true
+            
+            if let businessViewModel = annotation as? BusinessViewModel {
+                
+                switch businessViewModel.rating {
+                    case 4...5:
+                        businessAnnotationView?.markerTintColor = UIColor.green
+                    default:
+                        businessAnnotationView?.markerTintColor = UIColor.red
+                }
+            }
+        } else {
+            businessAnnotationView?.annotation = annotation
+        }
+        
+        return businessAnnotationView
+        
+    }
+    
+    private func getRandomRating() -> Double {
+        return Double.random(in: 1...5)
+    }
+    
     // this function is used to add the placemark on the map
     private func addPlacemarkToMap(placemark :CLPlacemark) {
        
+        guard let location = placemark.location,
+              let name = placemark.name
+        else {
+            return
+        }
+
         
+        let businessViewModel = BusinessViewModel(coordinate: location.coordinate, title: name, rating: getRandomRating())
+        
+        self.mapView.addAnnotation(businessViewModel)
        
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		634FFFFA21DF33C200AE6F54 /* BusinessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634FFFF921DF33C200AE6F54 /* BusinessViewModel.swift */; };
 		8D41B3DD21179E8E0035CED3 /* chevron-flat.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D41B3DC21179E8E0035CED3 /* chevron-flat.png */; };
 		8D998AB62117910800EAC2F3 /* coffee-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D998AB52117910800EAC2F3 /* coffee-pin.png */; };
 		8D998AB82117928600EAC2F3 /* CoffeeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D998AB72117928600EAC2F3 /* CoffeeAnnotation.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		634FFFF921DF33C200AE6F54 /* BusinessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessViewModel.swift; sourceTree = "<group>"; };
 		8D41B3DC21179E8E0035CED3 /* chevron-flat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chevron-flat.png"; sourceTree = "<group>"; };
 		8D998AB52117910800EAC2F3 /* coffee-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coffee-pin.png"; sourceTree = "<group>"; };
 		8D998AB72117928600EAC2F3 /* CoffeeAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeAnnotation.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		634FFFF821DF339500AE6F54 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				634FFFF921DF33C200AE6F54 /* BusinessViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		8DAB2B1B21174ED900BF5501 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +70,7 @@
 		8DAB2B2621174ED900BF5501 /* hello-maps */ = {
 			isa = PBXGroup;
 			children = (
+				634FFFF821DF339500AE6F54 /* ViewModels */,
 				8DAB2B2721174ED900BF5501 /* AppDelegate.swift */,
 				8DAB2B2921174ED900BF5501 /* ViewController.swift */,
 				8D998AB52117910800EAC2F3 /* coffee-pin.png */,
@@ -148,6 +159,7 @@
 			files = (
 				8DAB2B2A21174ED900BF5501 /* ViewController.swift in Sources */,
 				8DAB2B2821174ED900BF5501 /* AppDelegate.swift in Sources */,
+				634FFFFA21DF33C200AE6F54 /* BusinessViewModel.swift in Sources */,
 				8D998AB82117928600EAC2F3 /* CoffeeAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
